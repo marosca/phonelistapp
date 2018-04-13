@@ -1,0 +1,10 @@
+<div class="phone-list-container">
+
+  <mat-spinner *ngIf="loading; else PhoneList" class="loading"></mat-spinner>
+
+  <ng-template #PhoneList>
+      <phone-detail class="phone-detail" *ngFor="let phone of listOfPhones"  [item]="phone"></phone-detail>
+  </ng-template>
+
+</div>
+
