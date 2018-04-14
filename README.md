@@ -10,12 +10,11 @@ with Angular and using Redux (ngxr for state management).
 If you want to build the app for production you have to type `ng build -prod`.
 
 ## Important note about load data from http request or from store
-First time the app runs, the data is load from an http request to the rest api (remember to run `node server.js`). In the server ('server.js') I use a timeout to 
-forced the server to take 2 seconds to return the data (and use a spinner loader).
+First time the app runs, the data is load from an http request to the rest api (remember to run `node server.js`). In the server ('server.js') I use a timeout to forced the server to take 2 seconds to return the data (and use a spinner loader).
 
 In the toolbar you can find two link, both of them load the same component, but this time, instead of make a request, the data will be load from store. If you reload the app, the data wil be load from a http request again
 
-##Docker image
+## Docker image
 You can find the docker image in https://hub.docker.com/r/marosca/phonelistapp/
 To run image remeber not use port 8080 (the project use an api serve in that port). Pe:
 
