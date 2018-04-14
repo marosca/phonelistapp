@@ -13,7 +13,7 @@ import { State, Store } from '@ngrx/store';
 export class PhoneListContainer implements OnInit {
     listOfPhones: PhoneModel[];
     origin:String;
-
+    errorMsg:String;
 
     constructor(private phoneAction: PhoneAction, private store: Store<any>) {
       this.origin = "ngxr Store";
@@ -24,13 +24,16 @@ export class PhoneListContainer implements OnInit {
     getPhonesFromStore() {
       this.store.select('phone').subscribe(phone => {
         if (phone) {
-          phone && !phone.list && this.getPhonesFromApi();
+          phone && !phone.list && this.getPhonesFromApi(this);
           this.listOfPhones = phone.list;
         }
       });
     }
-    getPhonesFromApi() {
-      this.phoneAction.getPhones();
+    getPhonesFromApi(context) {
+      this.phoneAction.getPhones()
+        .catch( e => {
+          context.errorMsg = "Upp, hay un error, ¿has levantado el server (API)?";
+        });
       this.origin = "Api Externa";
   }
 

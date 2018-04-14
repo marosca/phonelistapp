@@ -1,6 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
 import { PhoneListContainer } from './pages/phoneListContainer/phoneListContainer.component';
-import { HomeComponent } from './pages/home/home.component';
 
 const app_routes: Routes = [
   //duplicate component to test that the first one (route home) loads data from http

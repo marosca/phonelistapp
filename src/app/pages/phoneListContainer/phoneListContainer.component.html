@@ -6,5 +6,7 @@
       <phone-detail class="phone-list-container__phone-detail" *ngFor="let phone of listOfPhones"  [item]="phone"></phone-detail>
   </ng-template>
 
+  <p *ngIf="!listOfPhones && errorMsg" class="phone-list-container__errorMsg">{{errorMsg}}</p>
+
 </div>
 

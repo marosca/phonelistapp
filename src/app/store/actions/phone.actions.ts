@@ -26,7 +26,7 @@ export class PhoneAction {
     constructor(private _restPhoneService: RestPhoneService, private store: Store<any>){}
 
     getPhones(){
-      this._restPhoneService.get().toPromise().then(data => {
+      return this._restPhoneService.get().toPromise().then(data => {
           this.store.dispatch(new GetPhonesAction(data));
       });
   }
