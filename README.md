@@ -21,6 +21,6 @@ You can find the docker image in https://hub.docker.com/r/marosca/phonelistapp/
 To run image remember not to use port 8080 (the project use an api serve in that port). Fe:
 
 `docker pull marosca/phonelistapp`
-docker run -i -t -p 3000:80 phonelistapp:latest`
+`docker run -i -t -p 3000:80 phonelistapp:latest`
 
 Note: I've included Dockerfile in the root directory to take a look
