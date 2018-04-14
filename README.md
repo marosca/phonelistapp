@@ -1,27 +1,25 @@
 # PhoneListApp
+This project has been created by Mariola Moreno. It's a phone listing created
+with Angular and using Redux (ngxr for state management).
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+## Run in development mode
+1. First you have to run the serve to provide the REST API to the application. To run the serve you have type `node server.js` and then, the app will have the mock data in the route `localhost:8080/phones` The app use a Rest Api created in node.js (you can find it in the file "server.js").
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
+2. Run `ng serve -o` (inside /phonelistapp) and go to `http://localhost:4200/`.  
 ## Build
+If you want to build the app for production you have to type `ng build -prod`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Important note about load data from http request or from store
+First time the app runs, the data is load from an http request to the rest api (remember to run `node server.js`). In the server ('server.js') I use a timeout to 
+forced the server to take 2 seconds to return the data (and use a spinner loader).
 
-## Running unit tests
+In the toolbar you can find two link, both of them load the same component, but this time, instead of make a request, the data will be load from store. If you reload the app, the data wil be load from a http request again
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+##Docker image
+You can find the docker image in https://hub.docker.com/r/marosca/phonelistapp/
+To run image remeber not use port 8080 (the project use an api serve in that port). Pe:
 
-## Running end-to-end tests
+docker pull marosca/phonelistapp
+docker run -i -t -p 3000:80 phonelistapp:latest
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Note: I've include Dockerfile in the root directory to take a look
