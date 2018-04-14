@@ -1,4 +1,5 @@
-<mat-card class="phone-detail">
+<mat-card class="phone-detail"
+    [ngClass]="{'animated fadeIn-bottomToTop': isHome}">
   <mat-card-header class="phone-detail__header">
     <mat-card-title class="phone-detail__title">{{item?.title}}</mat-card-title>
     <mat-card-subtitle class="phone-detail__subtitle">{{item?.color}}</mat-card-subtitle>

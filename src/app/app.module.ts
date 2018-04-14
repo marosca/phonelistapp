@@ -18,9 +18,13 @@ import { PhoneListContainer } from './pages/phoneListContainer/phoneListContaine
 //Services
 import { RestPhoneService } from './services/restPhone.service';
 
-// Rutas
+// Paths
 import { APP_ROUTING } from './app.routes';
 
+//Store
+import { StoreModule } from '@ngrx/store';
+import { PhoneAction } from './store/actions/phone.actions';
+import { reducers } from './store/reducers/index';
 
 @NgModule({
   declarations: [
@@ -33,11 +37,13 @@ import { APP_ROUTING } from './app.routes';
     BrowserAnimationsModule,
     MatCardModule, MatButtonModule, MatIconModule, MatFormFieldModule, MatSelectModule, MatSlideToggleModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatToolbarModule, MatProgressSpinnerModule,
     HttpModule,
-    APP_ROUTING
+    APP_ROUTING,
+    StoreModule.forRoot(reducers)
   ],
   providers: [
     {provide: API_URL, useValue: 'http://localhost:8080'},
     RestPhoneService,
+    PhoneAction
   ],
   bootstrap: [AppComponent]
 })

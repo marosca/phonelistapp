@@ -1,9 +1,9 @@
 <div class="phone-list-container">
-
-  <mat-spinner *ngIf="loading; else PhoneList" class="loading"></mat-spinner>
+  <span class="phone-list-container__info">Datos cargados desde: <span>{{origin}}</span></span>
+  <mat-spinner *ngIf="!listOfPhones; else PhoneList" class="phone-list-container__loading"></mat-spinner>
 
   <ng-template #PhoneList>
-      <phone-detail class="phone-detail" *ngFor="let phone of listOfPhones"  [item]="phone"></phone-detail>
+      <phone-detail class="phone-list-container__phone-detail" *ngFor="let phone of listOfPhones"  [item]="phone"></phone-detail>
   </ng-template>
 
 </div>
