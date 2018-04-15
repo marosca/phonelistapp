@@ -100,6 +100,6 @@ app.delete('/items/:id', function(req, res) {
    res.send('Delete ' + itemId);
 });
 
-var server = app.listen(3000, function () {
+var server = app.listen(8080, function () {
     console.log('Server is running..');
 });
