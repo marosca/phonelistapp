@@ -27,3 +27,6 @@ To run image remember not to use port 8080 (the project use an api serve in that
 `docker run -i -t -p 3000:80 phonelistapp:latest`
 
 Note: I've included Dockerfile in the root directory to take a look
+
+## Demo site
+https://marosca.github.io/phonelistapp-demo/home (using the Rest Api hosted in https://server-phones.herokuapp.com/phones)
